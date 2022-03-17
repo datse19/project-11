@@ -1,34 +1,28 @@
 import React from 'react';
-import { withRouter } from 'react-router';
+
 import NotFound from './NotFound';
 import Photos from './Photos';
 
+//construction should display image and list in browser
 const PhotoContainer = (props) => {
-    let search = props.match.params.query;
-    let title = `Results for: ${search}`;
-    let matches = props.photos;
-    let photoLists;
-
-    if (search !== props.query) {
-        props.updateQuery(search);
+    
+    const results = props.data
+    let photo;
+    if (results.length > 0) {
+        photo = results.map(photos => <Photos url={`https://live.staticflickr.com/${photos.server}/${photos.id}_${photos.secret}.jpg`} key={photos.id} alt={`${photos.title}`} />);
     } else {
-        if (matches.length > 0) {
-            photoLists = matches.map( (photo, index) => <Photos key={index} data={photo} /> );
-        } else {
-            title = "";
-            photoLists = <NotFound /> 
-        }
+        photo = <NotFound />
     }
 
     return (
         <div className ="photo-container" >
-            <h2>{title}</h2>
+            <h2>Results</h2>
             <ul>
-                {photoLists}
+                {photo}
             </ul>
         </div>
     );
 }
 
 
-export default withRouter(PhotoContainer);
+export default PhotoContainer;

@@ -1,10 +1,10 @@
 import React from 'react';
 
 const NotFound = () => {
-    <div className= "not-found">
-        <h2>No result found</h2>
-        <p>The search did not yield any results, please try again.</p>
-    </div>
+    <li className= "not-found">
+        <h2>No Results Found.</h2>
+        <p>The search did not return any results, please try again.</p>
+    </li>
 };
 
 export default NotFound;
