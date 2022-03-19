@@ -62,6 +62,7 @@ input {
 .main-nav a:hover,
 .search-form button:hover {
   background-color: #80e73c;
+  transform:scale(1.2);
 }
 
 .photo-container ul {
@@ -86,7 +87,7 @@ input {
 }
 
 .photo-container li:hover img {
-  transform: scale(1.25) translate(5%);
+  transform: scale(1.35) translate(7%);
 }
 
 .photo-container .not-found {
