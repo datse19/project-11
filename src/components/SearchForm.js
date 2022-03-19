@@ -27,7 +27,7 @@ class SearchForm extends Component {
                 <input 
                     type = "search"
                     name = "search"
-                    placeholder = "Search.."
+                    placeholder = "Search...."
                     onChange = {this.onSearchChange}
                     required
                 />
